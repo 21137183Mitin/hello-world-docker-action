@@ -6,9 +6,10 @@ env:
 
 jobs:
   hello_world_job:
+    environment: Stage2
     runs-on: ubuntu-latest
     name: A job to say hello
-    steps:
+    steps:   
       - name: Hello world action step
         id: hello
         uses: actions/hello-world-docker-action@v1
@@ -22,6 +23,9 @@ jobs:
 
       - name: Get Secret2
         run: echo "The secret2 was $SECRET2 "
+      
+      - name: Get Environment Secret
+        run: echo "The secret2 was ${{ secrets.SECRET_FILE }} "
 
       - name: "Say Hello Mona it's Monday"
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
