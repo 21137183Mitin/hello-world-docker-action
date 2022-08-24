@@ -2,6 +2,7 @@ on: [push]
 
 env:
     DAY_OF_WEEK: Wednesday
+    SECRET2: ${{ secrets.SECRET_FILE }}
 
 jobs:
   hello_world_job:
@@ -16,6 +17,10 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Get Secret
+        run: echo "The secret was ${{ secrets.SECRET_FILE }}"
+      - name: Get Secret2
+        run: echo "The secret2 was $SECRET2 "
       - name: "Say Hello Mona it's Monday"
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
         env:
