@@ -21,7 +21,7 @@ jobs:
         run: echo "The secret was ${{ secrets.SECRET_FILE2 }}"
 
       - name: Get Secret2
-        run: echo "The secret2 was $SECRET2 "
+        run: echo "The secret2 was $SECRET2.name "
 
       - name: "Say Hello Mona it's Monday"
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
